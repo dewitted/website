@@ -1,0 +1,34 @@
+article{
+    height: 800px;
+    width: 100%;
+    background-image: url("../images/picture1.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .main-box{
+        height: 450px;
+        width: 370px;
+        background-color: black;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .height-box{
+            height: 85%;
+            width: 87%;
+            border: 1px solid $textmain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .width-box{
+            position: absolute;
+            height: 90%;
+            width: 81%;
+            border: 1px solid $textmain;
+        }
+    }
+}
