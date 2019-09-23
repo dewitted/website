@@ -1,0 +1,141 @@
+/* -------------------------------------------------------------
+    -   css3-prefix             - arguments: Property, Value
+    -   border-radius           - arguments: Radius: 5px
+    -   opacity                 - arguments: Opacity: 0.5
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    -   transform               - arguments: Parameters: null
+    -   transition              - Default arguments: What: all, Length: 1s, Easing: ease-in-out
+    -                           - Examples: @include transition (all 2s ease-in-out);
+    -                                       @include transition (opacity 1s ease-in 2s, width 2s ease-out);
+    -   vertical align          - @include vertical-align
+    -   horizontal align        - @include horizontal-align
+    -   center align            - @include center-align
+------------------------------------------------------------- */
+
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+/* BORDER RADIUS */
+@mixin border-radius($radius: 5px) {
+  @include css3-prefix('border-radius', $radius);
+}
+
+/* OPACITY */
+@mixin opacity($opacity: 0.5) {
+  $opacityMultiplied: ($opacity * 100);
+
+  filter:         alpha(opacity=$opacityMultiplied);
+  -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")";
+  @include css3-prefix('opacity', $opacity);
+}
+
+/* ROTATE*/
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  @include css3-prefix('transform', rotate($deg + deg));
+  filter: progid:DXImageTransform.Microsoft.Matrix(
+                  M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+/* TRANSFORM  */
+@mixin transform($params) {
+  @include css3-prefix('transform', $params);
+}
+
+/* TRANSITION */
+@mixin transition($properties...) {
+
+  @if length($properties) >= 1 {
+    @include css3-prefix('transition', $properties);
+  }
+
+  @else {
+    @include css3-prefix('transition', 'all .4s ease-in-out');
+  }
+}
+
+/* TRANSITION PROPERTY NONE */
+
+@mixin transition-property-none {
+  @include css3-prefix('transition-property','none');
+}
+
+/* VERTICAL ALIGN */
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  @include css3-prefix('transform','translateY(-50%)');
+}
+
+/* HORIZONTAL ALIGN */
+
+@mixin horizontal-align {
+  position: relative;
+  left: 50%;
+  @include css3-prefix('transform','translateX(-50%)');
+}
+
+/* CENTER ALIGN */
+
+@mixin center-align {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  @include css3-prefix('transform','translate(-50%,-50%)');
+}
+
+/* Color  Function */
+
+@function color($group, $shade:normal, $transparency:1){
+  @each $color in $color-stack{
+    $c-group: map-get($color, group);
+    $c-shade: map-get($color, id);
+    @if($group == map-get($color, group) and $shade == map-get($color, id)){
+      @return rgba(map-get($color, color), $transparency);
+    }
+  }
+}
+
+/* No text select */
+
+@mixin noselect() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* KEYFRAMES */
+
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin custom-animation($variab) {
+  @include css3-prefix('animation',#{$variab});
+}
+@mixin custom-animation-delay($variab) {
+  @include css3-prefix('animation-delay',#{$variab});
+}
