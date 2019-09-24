@@ -13,7 +13,7 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: red;
+    background-color: $black;
 }
 
 nav{
@@ -58,6 +58,16 @@ h4{
     font-weight: 100;
 }
 
+h5{
+    line-height: 27px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2mm;
+    color: $textmain;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 300;
+}
+
 h2{
     display: block;
     padding-left: 3mm;
@@ -77,6 +87,28 @@ h3{
     letter-spacing: 3mm;
     color: white;
     font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+
+h6{
+    line-height: 45px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 3mm;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+
+p{
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 0.5mm;
+    color: $textmain;
+    font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 100;
 }
 

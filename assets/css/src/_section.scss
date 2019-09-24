@@ -1,0 +1,98 @@
+.horizontal{
+    flex-direction: row;
+    height: 500px;
+    margin-bottom: 0px;
+    margin-top: 100px;
+}
+
+.nomargin{
+    margin-top: 0px;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+section{
+    height: 600px;
+    width: 100%;
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p{
+        width: 700px;
+    }
+    .arrow{
+        display: block;
+        width: 40px;
+        height: 70px;
+        background: center/contain no-repeat url("../images/arrow.svg");
+        margin-top: 25px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .widthboxend{
+        display: flex;
+        justify-content: flex-start;
+        width: 70%;
+        .beer{
+            margin-left: 140px;
+            background: left/cover no-repeat url("../images/singer.jpg");
+        }
+    }
+    .widthbox{
+        display: flex;
+        justify-content: flex-start;
+        width: 70%;
+        .beer{
+            margin-right: 140px;
+        }
+    }
+    .beer{
+        width: 450px;
+        height: 450px;
+        background: left/cover no-repeat url("../images/beer.jpg");
+    }
+    .information{
+        box-sizing: border-box;
+        padding-left: 70px;
+        padding-bottom: 60px;
+        width: 450px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        h6{
+            text-align: left;
+        }
+        p{
+            width: 360px;
+            text-align: left;
+        }
+        .width-container{
+            height: 55%;
+            width: 87%;
+            border-bottom: 1px solid $textmain;
+            border-left: 1px solid $textmain;
+            position: absolute;
+            top: 150px;
+            right: 40px;
+        }
+        .height-container{
+            height: 60%;
+            width: 81%;
+            border-bottom: 1px solid $textmain;
+            border-left: 1px solid $textmain;
+            position: absolute;
+            top: 140px;
+            right: 55px;
+            // transform: translate(-25px, 50px);
+        }
+    }
+}
+
