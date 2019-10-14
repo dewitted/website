@@ -1,7 +1,7 @@
 .horizontal{
     flex-direction: row;
     height: 500px;
-    margin-bottom: 0px;
+    margin-bottom: 100px;
     margin-top: 100px;
 }
 
@@ -9,12 +9,20 @@
     margin-top: 0px;
 }
 
+.marginright{
+    margin-right: 50px;
+}
+
 .reverse{
     flex-direction: row-reverse;
 }
 
+.row{
+    flex-direction: row;
+}
+
 section{
-    height: 600px;
+    height: 700px;
     width: 100%;
     background-color: $black;
     display: flex;
@@ -32,6 +40,55 @@ section{
         margin-top: 25px;
         &:hover{
             cursor: pointer;
+        }
+    }
+    .heightbox{
+        box-sizing: border-box;
+        padding-left: 50px;
+        padding-bottom: 50px;
+        width: 550px;
+        height: 600px;
+        // background-color: red;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+        .infoSmall{
+            box-sizing: border-box;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            height: 40%;
+            width: 100%;
+            // background-color: grey;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            p{
+                width: 60%;
+                text-align: left;
+            }
+        }
+        .width-container{
+            height: 210px;
+            width: 210px;
+            border-bottom: 1px solid $textmain;
+            border-left: 1px solid $textmain;
+            position: absolute;
+            top: 350px;
+            left: 20px;
+            
+        }
+        .height-container{
+            height: 220px;
+            width: 200px;
+            border-bottom: 1px solid $textmain;
+            border-left: 1px solid $textmain;
+            position: absolute;
+            top: 350px;
+            left: 30px;
+            // transform: translate(-25px, 50px);
         }
     }
     .widthboxend{
