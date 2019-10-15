@@ -1,0 +1,89 @@
+footer{
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    .containerone{
+        box-sizing: border-box;
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-bottom: 10px;
+        height: 100%;
+        width: 550px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        p{
+            text-align: left;
+            font-size: 18px;
+            color: white;
+            font-weight: 300;
+        }
+        form{
+            input[type=text]{
+                box-sizing: border-box;
+                padding: 10px;
+                height: 40px;
+                width: 350px;
+                background-color: $black;
+                border: 1px solid white;
+                font-family: 'Barlow Semi Condensed', sans-serif;
+                font-weight: 300;
+                font-size: 15px;
+                letter-spacing: 0.5mm;
+                color: $textmain;
+                margin-right: 13px;
+            }
+            input[type=submit]{
+                height: 40px;
+                width: 150px;
+                background-color: $textmain;
+                border: 0;
+                font-family: 'Barlow Semi Condensed', sans-serif;
+                font-weight: 300;
+                font-size: 15px;
+                letter-spacing: 0.3mm;
+                color: $black;
+            }
+        }
+        .icons{
+            width: 200px;
+            height: 40px;
+            align-self: flex-end;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            .facebook{
+                height: 20px;
+                width: 20px;
+                margin-right: 20px;
+                background: center/contain no-repeat url("../images/facebook.svg")
+            }
+            .foursquare{
+                height: 20px;
+                width: 20px;
+                margin-right: 20px;
+                background: center/contain no-repeat url("../images/foursquare.svg")
+            }
+            .twitter{
+                height: 20px;
+                width: 20px;
+                margin-right: 20px;
+                background: center/contain no-repeat url("../images/twitter.svg")
+            }
+            .instagram{
+                height: 20px;
+                width: 20px;
+                background: center/contain no-repeat url("../images/instagram.svg")
+            }
+        }
+        h1{
+            text-align: right;
+            width: 100%;
+        }
+    }
+}
