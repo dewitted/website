@@ -2,7 +2,7 @@
   "name": "mp-wp",
   "version": "2019.05.31",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
